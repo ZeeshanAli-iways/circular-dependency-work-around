@@ -1,10 +1,9 @@
 package com.circular.dependency.workaround.service;
 
+import javax.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import javax.annotation.PostConstruct;
 
 /**
  * Service one. Used {@link ServiceTwo} as dependency
@@ -22,7 +21,7 @@ public class ServiceOne {
 
   @PostConstruct
   public void init() {
-    log.info("{} started",this.getClass().getName());
+    log.info("{} started", this.getClass().getName());
   }
 
 }
